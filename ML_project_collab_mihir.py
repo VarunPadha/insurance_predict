@@ -81,21 +81,10 @@ Insurance_label=train_set["charges"].copy()
 
 
 
-Datamap_sex={
-    "female":0,
-    "male":1,
-}
-Insurance["sex"]=Insurance["sex"].map(Datamap_sex)
-Datamap_smoker={
-    "yes":0,
-    "no":1,
-}
-Insurance["smoker"]=Insurance["smoker"].map(Datamap_smoker)
-Datamap_region={
-    "northwest":0,
-    "southwest":1,
-}
-Insurance["region"]=Insurance["region"].map(Datamap_region)
+from sklearn.preprocessing import OneHotEncoder
+ohe = OneHotEncoder()
+Insurance_new=ohe.fit_transform(Insurance[['sex','region','smoker']]).toarray()
+Insurance=np.hstack((Insurance[['index','bmi','age','children']].values,Insurance_new))
 
 
 
