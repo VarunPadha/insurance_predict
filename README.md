@@ -6,3 +6,5 @@ Decision tree
 Random forest
 used mean squared error for caculating the error 
 calculated cross validation for checking scores for each model and stored it in another file 
+Used OneHotEncoding for converting data into number
+used joblib to dump the model
