@@ -138,7 +138,8 @@ scores=cross_val_score(model,Insurance_stand,Insurance_label,scoring="neg_mean_s
 
 np.sqrt(-scores)
 
-
+from joblib
+joblib.dump(model,"insurance_predection)
 
 
 
