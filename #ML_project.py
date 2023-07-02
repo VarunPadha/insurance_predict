@@ -20,7 +20,6 @@ Insurance.describe()
 
 
 
-
 Insurance.value_counts()
 
 
